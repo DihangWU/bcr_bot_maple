@@ -9,3 +9,6 @@
     4. add new rviz config file "Maple.rviz" to configure the rviz2 display
     5. change kinect camera's effective distance to 20m
     6. remove unused function "get_xacro_to_doc"
+* version 2.0.1
+    * change the 3D lidar's horizontal angle range to -60 to 60, keep the vertical angle range to -15 to 15
+    * update the config file "Maple.rviz" to better display
