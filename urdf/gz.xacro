@@ -82,6 +82,42 @@
         </gazebo>
     </xacro:if>
 
+    <!-- ........................... 3D LIDAR config ................................... -->
+
+    <xacro:if value="$(arg three_d_lidar_enabled)">
+        <gazebo reference="three_d_lidar">
+            <material>Gazebo/Black</material>
+            <sensor name='gpu_3d_lidar' type='gpu_lidar'>
+                <topic>three_d_lidar_points</topic>
+                <update_rate>${three_d_lidar_update_rate}</update_rate>
+                <gz_frame_id>three_d_lidar</gz_frame_id>
+                <lidar>
+                    <scan>
+                        <horizontal>
+                            <samples>${three_d_lidar_horizontal_samples}</samples>
+                            <resolution>1</resolution>
+                            <min_angle>${radians(three_d_lidar_horizontal_min_angle)}</min_angle>
+                            <max_angle>${radians(three_d_lidar_horizontal_max_angle)}</max_angle>
+                        </horizontal>
+                        <vertical>
+                            <samples>${three_d_lidar_vertical_samples}</samples>
+                            <resolution>1</resolution>
+                            <min_angle>${radians(three_d_lidar_vertical_min_angle)}</min_angle>
+                            <max_angle>${radians(three_d_lidar_vertical_max_angle)}</max_angle>
+                        </vertical>
+                    </scan>
+                    <range>
+                        <min>${three_d_lidar_min_range}</min>
+                        <max>${three_d_lidar_max_range}</max>
+                        <resolution>0.01</resolution>
+                    </range>
+                </lidar>
+                <always_on>1</always_on>
+                <visualize>true</visualize>
+            </sensor>
+        </gazebo>
+    </xacro:if>
+
     <!-- ........................... CAMERA config ................................... -->
 
     <xacro:if value="$(arg camera_enabled)">
@@ -100,7 +136,7 @@
                     </image>
                     <clip>
                         <near>0.05</near>
-                        <far>8.0</far>
+                        <far>20.0</far>
                     </clip>
                 </camera>
             </sensor>
