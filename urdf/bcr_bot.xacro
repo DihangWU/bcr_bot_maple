@@ -36,8 +36,8 @@
     <xacro:property name="three_d_lidar_vertical_samples" value="16"/>
     <xacro:property name="three_d_lidar_horizontal_min_angle" value="-60"/>
     <xacro:property name="three_d_lidar_horizontal_max_angle" value="60"/>
-    <xacro:property name="three_d_lidar_vertical_min_angle" value="-15"/>
-    <xacro:property name="three_d_lidar_vertical_max_angle" value="15"/>
+    <xacro:property name="three_d_lidar_vertical_min_angle" value="-20"/>
+    <xacro:property name="three_d_lidar_vertical_max_angle" value="10"/>
     <xacro:property name="three_d_lidar_min_range" value="0.3"/>
     <xacro:property name="three_d_lidar_max_range" value="100"/>
 
@@ -197,7 +197,7 @@
         <joint name="three_d_lidar_joint" type="fixed">
             <parent link="base_link"/>
             <child link="three_d_lidar"/>
-            <origin xyz="0.0 0 0.155" rpy="0 0 0" />
+            <origin xyz="${chassis_length/2} 0 0.155" rpy="0 0 0" />
         </joint>
 
     </xacro:if>
