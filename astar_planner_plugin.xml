@@ -1,0 +1,5 @@
+<library path="bcr_bot_astar_planner">
+  <class name="bcr_bot::AStarPlanner" type="bcr_bot::AStarPlanner" base_class_type="nav2_core::GlobalPlanner">
+    <description>Cost-aware grid A* global planner for the BCR robot.</description>
+  </class>
+</library>

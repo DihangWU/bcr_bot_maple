@@ -51,3 +51,19 @@ how to use self mapped map to navigate the robot to a specific position
 source install/setup.bash
 ros2 launch bcr_bot nav2.launch.py map:=[full path to diy_map_name.yaml]
 ```
+
+## Custom C++ A* global planner
+
+The planner server is configured to load the handwritten A* implementation as
+`bcr_bot::AStarPlanner`. It reads the Nav2 global costmap, avoids lethal and
+inflated cells, supports diagonal motion without corner cutting, and passes
+the resulting path to the configured controller.
+
+```shell
+source /opt/ros/jazzy/setup.bash
+colcon build --symlink-install --packages-select bcr_bot
+source install/setup.bash
+colcon test --packages-select bcr_bot
+ros2 plugin list | grep bcr_bot::AStarPlanner
+ros2 launch bcr_bot nav2.launch.py
+```

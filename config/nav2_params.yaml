@@ -221,10 +221,18 @@ planner_server:
     #expected_planner_frequency: 20.0
     planner_plugins: ["GridBased"]
     GridBased:
-      plugin: "nav2_navfn_planner::NavfnPlanner"
-      tolerance: 0.5
-      use_astar: false
+      # 手写的A*规划器
+      plugin: "bcr_bot::AStarPlanner"
       allow_unknown: true
+      use_diagonal: true
+      prevent_corner_cutting: true
+      cost_penalty: 2.0
+      max_planning_time: 2.0
+      # ROS2 自带的规划器
+      # plugin: "nav2_navfn_planner::NavfnPlanner"
+      # tolerance: 0.5
+      # use_astar: false
+      # allow_unknown: true
 
 smoother_server:
   ros__parameters:
