@@ -33,7 +33,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'use_sim_time': use_sim_time,
-            'slam_params_file': os.path.join(pkg_bcr, 'config', 'mapper_params_online_async.yaml'),
+            'slam_params_file': os.path.join(pkg_bcr, 'launch', 'mapping.launch.yaml'),
         }.items()
     )
 
@@ -66,4 +66,3 @@ def generate_launch_description():
     ld.add_action(static_transform_publisher_node)
 
     return ld
-

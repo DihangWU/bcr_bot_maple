@@ -25,7 +25,7 @@ def generate_launch_description():
     )
 
     spawn_bcr_bot_node = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(join(bcr_bot_path, "launch", "bcr_bot_gz_spawn.launch.py")),
+        PythonLaunchDescriptionSource(join(bcr_bot_path, "launch", "gz.launch.botspawn.py")),
         launch_arguments={
             # Pass any arguments if your spawn.launch.py requires
         }.items()

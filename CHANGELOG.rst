@@ -2,6 +2,10 @@
 Changelog for package bcr_bot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.1.1 (2026-10-03)
+--------------------
+    * optimize the project directory structure
+
 2.1.1 (2026-10-03)
 --------------------
     1. add .clangd configuration file

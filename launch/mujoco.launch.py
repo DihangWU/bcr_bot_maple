@@ -32,7 +32,7 @@ def generate_launch_description():
         )
     }
     controller_parameters = PathJoinSubstitution(
-        [FindPackageShare("bcr_bot"), "config", "mujoco_controllers.yaml"]
+        [FindPackageShare("bcr_bot"), "launch", "mujoco.launch.yaml"]
     )
 
     robot_state_publisher = Node(
