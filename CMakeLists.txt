@@ -19,7 +19,7 @@ target_compile_features(bcr_bot_astar_planner PUBLIC cxx_std_17)
 target_include_directories(bcr_bot_astar_planner PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/algorithm/astar/include> $<INSTALL_INTERFACE:include>)
 target_link_libraries(bcr_bot_astar_planner bcr_bot_astar_core)
 ament_target_dependencies(bcr_bot_astar_planner geometry_msgs nav2_core nav2_costmap_2d nav2_util nav_msgs pluginlib rclcpp tf2_ros)
-pluginlib_export_plugin_description_file(nav2_core astar_planner_plugin.xml)
+pluginlib_export_plugin_description_file(nav2_core algorithm/astar/astar_planner_plugin.xml)
 install(TARGETS bcr_bot_astar_core bcr_bot_astar_planner ARCHIVE DESTINATION lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin)
 install(DIRECTORY algorithm/astar/include/ DESTINATION include)
 
