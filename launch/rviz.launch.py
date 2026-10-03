@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# nav2.launch.py 和 mapping.launch.py 里都已经自带了 RVIZ 节点。rviz.launch.py 唯一的独立价值是"不启动任何仿真，单纯看机器人模型"
 import os
 import xacro
 from ament_index_python.packages import get_package_share_directory
@@ -19,7 +20,7 @@ def generate_launch_description():
     isaac_sim = LaunchConfiguration('isaac_sim')
 
     # Process XACRO
-    xacro_path = os.path.join(get_package_share_directory('bcr_bot'), 'urdf', 'bcr_bot.xacro')
+    xacro_path = os.path.join(get_package_share_directory('bcr_bot'), 'robot', 'urdf', 'bcr_bot.xacro')
     doc = get_xacro_to_doc(xacro_path, {"wheel_odom_topic": "odom"})
 
     # Nodes
