@@ -221,14 +221,41 @@ planner_server:
     #expected_planner_frequency: 20.0
     planner_plugins: ["GridBased"]
     GridBased:
-      # 手写的A*规划器
-      plugin: "bcr_bot::AStarPlanner"
+      # ROS2 自带的 Smac Hybrid-A* 全局规划器（连续空间 + 运动学约束）
+      plugin: "nav2_smac_planner::SmacPlannerHybrid"
+      downsample_costmap: false
+      downsampler: 1
+      tolerance: 0.25
       allow_unknown: true
-      use_diagonal: true
-      prevent_corner_cutting: true
-      cost_penalty: 2.0
+      max_iterations: 1000000
       max_planning_time: 2.0
-      # ROS2 自带的规划器
+      max_on_approach_iterations: 1000
+      angle_quantization_bins: 72
+      analytic_expansion_ratio: 3.5
+      analytic_expansion_max_length: 3.0
+      minimum_turning_radius: 0.2
+      reverse_penalty: 2.0
+      smooth_path: true
+      motion_model_for_search: "REEDS_SHEPP"
+        # DUBIN: 
+        #   前进
+        #   + 直行/左转弧/右转弧
+        #   + 不允许倒车
+        #   + 不支持原地旋转
+        # REEDS_SHEPP:
+        #   前进 + 倒车
+        #   + 直行/左转弧/右转弧
+        #   + 不支持原地旋转
+
+      # # 手写的A*规划器
+      # plugin: "bcr_bot::AStarPlanner"
+      # allow_unknown: true
+      # use_diagonal: true
+      # prevent_corner_cutting: true
+      # cost_penalty: 2.0
+      # max_planning_time: 2.0
+
+      # # ROS2 自带的navfn规划器
       # plugin: "nav2_navfn_planner::NavfnPlanner"
       # tolerance: 0.5
       # use_astar: false
