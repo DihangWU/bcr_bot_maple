@@ -65,23 +65,23 @@
 
     <!-- ............................... LOAD MACROS ................................. -->
 
-    <xacro:include filename="$(find bcr_bot)/urdf/materials.xacro"/>
-    <xacro:include filename="$(find bcr_bot)/urdf/macros.xacro"/>
+    <xacro:include filename="$(find bcr_bot)/robot/urdf/materials.xacro"/>
+    <xacro:include filename="$(find bcr_bot)/robot/urdf/macros.xacro"/>
 
     <xacro:if value="$(arg sim_gazebo)">
-        <xacro:include filename="$(find bcr_bot)/urdf/gazebo.xacro"/>
+        <xacro:include filename="$(find bcr_bot)/robot/urdf/gazebo.xacro"/>
     </xacro:if>
 
     <xacro:if value="$(arg sim_ign)">
-        <xacro:include filename="$(find bcr_bot)/urdf/ign.xacro"/>
+        <xacro:include filename="$(find bcr_bot)/robot/urdf/ign.xacro"/>
     </xacro:if>
 
     <xacro:if value="$(arg sim_gz)">
-        <xacro:include filename="$(find bcr_bot)/urdf/gz.xacro"/>
+        <xacro:include filename="$(find bcr_bot)/robot/urdf/gz.xacro"/>
     </xacro:if>
 
     <xacro:if value="$(arg sim_mujoco)">
-        <xacro:include filename="$(find bcr_bot)/urdf/mujoco_ros2_control.xacro"/>
+        <xacro:include filename="$(find bcr_bot)/robot/urdf/mujoco_ros2_control.xacro"/>
     </xacro:if>
 
     <!-- ................................ BASE LINK .................................. -->
@@ -107,7 +107,7 @@
         <visual>
             <origin xyz="0 0 -0.205" rpy="0 0 0" />
             <geometry>
-                <mesh filename="file://$(find bcr_bot)/meshes/bcr_bot_mesh.dae" scale="1 1 1"/>
+                <mesh filename="file://$(find bcr_bot)/robot/meshes/bcr_bot_mesh.dae" scale="1 1 1"/>
             </geometry>
         </visual>
 
@@ -230,7 +230,7 @@
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find bcr_bot)/meshes/kinect/d415.dae"/>
+                    <mesh filename="file://$(find bcr_bot)/robot/meshes/kinect/d415.dae"/>
                 </geometry>
                 <material name="black"/>
             </visual>
@@ -276,7 +276,7 @@
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find bcr_bot)/meshes/kinect/d415.dae"/>
+                    <mesh filename="file://$(find bcr_bot)/robot/meshes/kinect/d415.dae"/>
                 </geometry>
                 <material name="black"/>
             </visual>

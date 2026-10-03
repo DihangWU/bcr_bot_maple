@@ -4,7 +4,7 @@ project(bcr_bot)
 find_package(ament_cmake REQUIRED)
 include(algorithm/astar/CMakeLists.txt)
 
-install(DIRECTORY launch meshes models urdf worlds rviz config mjcf
+install(DIRECTORY launch robot models worlds rviz config mjcf
     DESTINATION share/${PROJECT_NAME}/
 )
 
