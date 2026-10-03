@@ -27,6 +27,6 @@
 
 	<export>
 		<build_type>ament_cmake</build_type>
-		<nav2_core plugin="${prefix}/astar_planner_plugin.xml" />
+		<nav2_core plugin="${prefix}/algorithm/astar/astar_planner_plugin.xml" />
 	</export>
 </package>

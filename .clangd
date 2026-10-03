@@ -1,0 +1,15 @@
+CompileFlags:
+  CompilationDatabase: ../../build/
+  Remove:
+    - -m*
+    - -f*color-diagnostics*
+    - -f*diagnostics-color*
+
+Diagnostics:
+  Suppress:
+    - unused-parameter
+    - missing-prototypes
+    - padded
+
+Index:
+  Background: Build
