@@ -30,7 +30,7 @@ ros2 launch bcr_bot gz.launch.py three_d_lidar_enabled:=True
 # open a new terminal in wsFolder
 # launch riviz2 visuallization
 source install/setup.bash
-rviz2 -d ./install/bcr_bot/share/bcr_bot/rviz/Maple.rviz
+rviz2 -d ./install/bcr_bot/share/bcr_bot/rviz/sensor.view.rviz
 
 # open a new terminal in wsFolder
 # open keyboard control try 9 keys: "uiojklm,."  

@@ -38,11 +38,11 @@ def generate_launch_description():
         name="rviz2",
         parameters=[{'use_sim_time': True}],
         arguments=[
-            '-d' + os.path.join(
-                get_package_share_directory('nav2_bringup'),
-                'rviz',
-                'nav2_default_view.rviz'
-            )
+            # '-d' + os.path.join(  系统自带的rviz配置
+            #     get_package_share_directory('nav2_bringup'),
+            #     'rviz',
+            #     'nav2_default_view.rviz'
+            '-d', os.path.join(pkg_bcr, 'rviz', 'nav2.launch.rviz')
         ]
     )
 
