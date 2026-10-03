@@ -11,7 +11,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     xacro_file = PathJoinSubstitution(
-        [FindPackageShare("bcr_bot"), "urdf", "bcr_bot.xacro"]
+        [FindPackageShare("bcr_bot"), "robot", "urdf", "bcr_bot.xacro"]
     )
 
     robot_description = {

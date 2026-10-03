@@ -13,7 +13,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time", default=True)
 
     bcr_bot_path = get_package_share_directory("bcr_bot")
-    world_file = LaunchConfiguration("world_file", default = join(bcr_bot_path, "worlds", "small_warehouse.sdf"))
+    world_file = LaunchConfiguration("world_file", default = join(bcr_bot_path, "simulation", "gazebo", "worlds", "small_warehouse.sdf"))
     gz_sim_share = get_package_share_directory("ros_gz_sim")
 
     gz_sim = IncludeLaunchDescription(
@@ -35,11 +35,11 @@ def generate_launch_description():
 
         AppendEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
-        value=join(bcr_bot_path, "worlds")),
+        value=join(bcr_bot_path, "simulation", "gazebo", "worlds")),
 
         AppendEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
-        value=join(bcr_bot_path, "models")),
+        value=join(bcr_bot_path, "simulation", "gazebo", "models")),
 
         DeclareLaunchArgument("use_sim_time", default_value=use_sim_time),
         DeclareLaunchArgument("world_file", default_value=world_file),
