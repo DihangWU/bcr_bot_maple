@@ -27,7 +27,7 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
             'autostart': autostart,
             'map': map_file,
-            'params_file': os.path.join(pkg_bcr, 'config', 'nav2_params.yaml'),
+            'params_file': os.path.join(pkg_bcr, 'launch', 'nav2.launch.yaml'),
             'package_path': pkg_bcr,
         }.items()
     )
